@@ -110,7 +110,7 @@ cd C:\Your\Experiment\Folder
 ## Step 4 — Generate the parser
 
 ```cmd
-win_bison -d ex4.y
+bison -d ex4.y
 ```
 
 This creates:
@@ -123,7 +123,7 @@ ex4.tab.h
 ## Step 5 — Generate the scanner
 
 ```cmd
-win_flex ex4.l
+flex ex4.l
 ```
 
 This creates:
@@ -141,7 +141,7 @@ gcc lex.yy.c ex4.tab.c -o ex4.exe
 ## Step 7 — Run
 
 ```cmd
-ex4.exe
+./ex4.exe
 ```
 
 ## Step 8 — Test input
@@ -164,10 +164,10 @@ Result:t4
 ## Quick exam commands
 
 ```cmd
-win_bison -d ex4.y
-win_flex ex4.l
+bison -d ex4.y
+flex ex4.l
 gcc lex.yy.c ex4.tab.c -o ex4.exe
-ex4.exe
+./ex4.exe
 ```
 
 ## Result
