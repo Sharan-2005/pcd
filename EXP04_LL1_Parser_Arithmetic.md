@@ -121,7 +121,7 @@ gcc ll1.c -o ll1.exe
 ## Step 4 — Run
 
 ```cmd
-ll1.exe
+./ll1.exe
 ```
 
 ## Step 5 — Test valid input
