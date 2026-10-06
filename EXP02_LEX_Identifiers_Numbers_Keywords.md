@@ -71,7 +71,7 @@ gcc lex.yy.c -o exp2.exe
 ## Step 5 — Run
 
 ```cmd
-exp2.exe
+./exp2.exe
 ```
 
 ## Step 6 — Enter test input
