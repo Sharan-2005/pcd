@@ -9,8 +9,8 @@ The uploaded Experiment 8 document contains the experiment title and description
 ## Step 1 — Confirm the environment
 
 ```cmd
-win_bison --version
-win_flex --version
+bison --version
+flex --version
 gcc --version
 ```
 
@@ -23,19 +23,80 @@ For an example file naming scheme, the build sequence would be:
 calc.l
 calc.y
 ```
+```calc.l file
+%{
+#include "calc.tab.h"
+#include <stdlib.h>
+%}
 
-Do not substitute another calculator program when the requirement is to reproduce the same experiment.
+%%
+[0-9]+      { yylval = atoi(yytext); return NUMBER; }
+[ \t]       ;
+\n          { return '\n'; }
+[+\-*/()]   { return yytext[0]; }
+.           { return yytext[0]; }
+%%
+
+int yywrap()
+{
+    return 1;
+}
+```
+ ```calc.y file
+%{
+#include <stdio.h>
+
+int yylex();
+void yyerror(const char *s)
+{
+    printf("Invalid Expression\n");
+}
+%}
+
+%token NUMBER
+
+%%
+input:
+    expr '\n' { printf("Result = %d\n", $1); }
+    ;
+
+expr:
+      expr '+' term { $$ = $1 + $3; }
+    | expr '-' term { $$ = $1 - $3; }
+    | term          { $$ = $1; }
+    ;
+
+term:
+      term '*' factor { $$ = $1 * $3; }
+    | term '/' factor { $$ = $1 / $3; }
+    | factor          { $$ = $1; }
+    ;
+
+factor:
+      '(' expr ')' { $$ = $2; }
+    | NUMBER       { $$ = $1; }
+    ;
+%%
+
+int main()
+{
+    printf("Enter expression: ");
+    yyparse();
+    return 0;
+}
+```
+
 
 ## Step 3 — Generate the parser
 
 ```cmd
-win_bison -d calc.y
+bison -d calc.y
 ```
 
 ## Step 4 — Generate the scanner
 
 ```cmd
-win_flex calc.l
+flex calc.l
 ```
 
 ## Step 5 — Compile
@@ -63,8 +124,8 @@ calc.exe
 ## Quick exam sequence
 
 ```cmd
-win_bison -d calc.y
-win_flex calc.l
+bison -d calc.y
+flex calc.l
 gcc calc.tab.c lex.yy.c -o calc.exe
 calc.exe
 ```
