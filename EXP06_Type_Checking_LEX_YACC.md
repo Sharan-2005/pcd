@@ -105,7 +105,7 @@ cd C:\Your\Experiment\Folder
 ## Step 4 — Generate the parser
 
 ```cmd
-win_bison -d type.y
+bison -d type.y
 ```
 
 This creates:
@@ -118,7 +118,7 @@ type.tab.h
 ## Step 5 — Generate the scanner
 
 ```cmd
-win_flex type.l
+flex type.l
 ```
 
 This creates:
@@ -136,7 +136,7 @@ gcc type.tab.c lex.yy.c -o type.exe
 ## Step 7 — Run
 
 ```cmd
-type.exe
+./type.exe
 ```
 
 ## Step 8 — Test values from the supplied experiment
@@ -160,10 +160,10 @@ Invalid type or Parse error
 ## Quick exam commands
 
 ```cmd
-win_bison -d type.y
-win_flex type.l
+bison -d type.y
+flex type.l
 gcc type.tab.c lex.yy.c -o type.exe
-type.exe
+./type.exe
 ```
 
 ## Result
