@@ -23,7 +23,7 @@ Replace the path with your actual folder path.
 Create a file named `automata.l` and paste the supplied code below **without changing it**.
 
 ```lex
-lex
+
 %{
 #include <stdio.h>
 /* Global tracking flags */
