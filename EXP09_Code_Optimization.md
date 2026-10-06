@@ -179,8 +179,22 @@ Enter the number of intermediate-code statements you want to provide.
 For every statement, enter:
 
 ```text
-left: <single-character variable>
-right: <right-hand side text>
+Enter the Number of Values: 5
+
+left: a
+right: b+c
+
+left: d
+right: a
+
+left: e
+right: b+c
+
+left: f
+right: d
+
+left: g
+right: e
 ```
 
 Repeat until the requested number of values is entered.
