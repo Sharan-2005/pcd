@@ -245,7 +245,7 @@ gcc lex.yy.c -o sdd.exe
 ## Step 6 — Run
 
 ```cmd
-sdd.exe
+./sdd.exe
 ```
 
 ## Step 7 — Enter an arithmetic expression
