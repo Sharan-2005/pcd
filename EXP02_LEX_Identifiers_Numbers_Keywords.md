@@ -53,7 +53,7 @@ int main()
 ## Step 3 — Generate the lexer
 
 ```cmd
-flex exp2.l
+flex exp2.1
 ```
 
 This creates:
