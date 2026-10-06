@@ -80,7 +80,7 @@ gcc lex.yy.c -o automata.exe
 ## Step 5 — Run
 
 ```cmd
-automata.exe
+./automata.exe
 ```
 
 ## Step 6 — Test
