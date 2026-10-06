@@ -155,7 +155,7 @@ gcc optimization10.c -o optimization10.exe
 ## Step 5 — Run
 
 ```cmd
-optimization10.exe
+./optimization10.exe
 ```
 
 ## Step 6 — Enter the supplied sample input
@@ -193,7 +193,7 @@ B3:
 
 ```cmd
 gcc optimization10.c -o optimization10.exe
-optimization10.exe
+./optimization10.exe
 ```
 
 ## Key data-flow terms
