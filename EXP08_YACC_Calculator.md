@@ -108,7 +108,7 @@ gcc calc.tab.c lex.yy.c -o calc.exe
 ## Step 6 — Run
 
 ```cmd
-calc.exe
+./calc.exe
 ```
 
 ## Special functions listed in the supplied Experiment 8 document
