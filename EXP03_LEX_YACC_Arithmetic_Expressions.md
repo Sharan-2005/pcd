@@ -18,8 +18,8 @@ Use the supplied procedure:
 5. Verify:
 
 ```cmd
-win_bison --version
-win_flex --version
+bison --version
+flex --version
 ```
 
 Both commands should show version information.
@@ -126,7 +126,7 @@ cd C:\Your\Experiment\Folder
 ## Step 4 — Generate the YACC parser
 
 ```cmd
-win_bison -d expr.y
+bison -d expr.y
 ```
 
 This creates:
@@ -139,7 +139,7 @@ expr.tab.h
 ## Step 5 — Generate the LEX scanner
 
 ```cmd
-win_flex expr.l
+flex expr.l
 ```
 
 This creates:
@@ -163,7 +163,7 @@ gcc expr.tab.c lex.yy.c -o expr.exe -lfl
 ## Step 7 — Run
 
 ```cmd
-expr.exe
+./expr.exe
 ```
 
 ## Step 8 — Test
