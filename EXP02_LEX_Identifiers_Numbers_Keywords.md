@@ -7,7 +7,7 @@ Implement a LEX program to recognize **keywords, integers, identifiers, and unkn
 Create:
 
 ```text
-exp2.l
+exp2
 ```
 
 ## Step 1 — Open Command Prompt
@@ -18,7 +18,7 @@ cd C:\Your\Experiment\Folder
 ```
 
 ## Step 2 — Create the LEX file
-Create `exp2.l` and paste this supplied program without changing it:
+Create `exp2` and paste this supplied program without changing it:
 
 ```lex
 %{
@@ -53,7 +53,7 @@ int main()
 ## Step 3 — Generate the lexer
 
 ```cmd
-flex exp2.1
+flex exp2
 ```
 
 This creates:
@@ -98,7 +98,7 @@ if                      { printf("KEYWORD\n"); }
 ## Quick exam commands
 
 ```cmd
-flex exp2.l
+flex exp2
 gcc lex.yy.c -o exp2.exe
 exp2.exe
 ```
